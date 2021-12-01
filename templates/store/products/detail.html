@@ -1,0 +1,28 @@
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'store/product_detail.css' %}">
+<div class="container">
+    <div class="row">
+        <div class="col1">
+            <img src=" {{ product.image.url }} " alt="" width="300" height="300">
+        </div>
+        <div class="col2">
+             <p>Home / T-shirt</p>
+             <h1>Red Printes T-shirt by JeremyDesign</h1>
+            <h4>${{product.price}}</h4>
+            <select>
+                <option>select the size</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+            </select>
+            <a href="">{{product.item.url}}</a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, sapiente!
+                <br> Atque pariatur tempora quo eum!</p>
+        </div> 
+    </div>
+</div>
+{% endblock %}
