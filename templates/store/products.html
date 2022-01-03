@@ -1,44 +1,27 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'store/style.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<body>
-    {% block content %}
-        <div class="container">
-            {% for product in products %}
-                <div class="card">
-                    <div class="imgbox">
-                        <img class= "image" src="{{ product.image.url }}" alt="" />
-                    </div>
-                    <div class="content">
-                        <div class="productName">
-                            <h4>{{product.item}}</h4>
-                        </div>
-                        <div class="price_rating">
-                            <h3 >${{ product.price}}</h3>
-                            <div class="rating">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <div class="add-to-cart">
-                               <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                            </div>
-                        </div>
+
+   {% extends 'store/base.html' %}
+    {% for product in products %}
+        <div class="main">
+        <div class="detail-card">
+            <div class="image-box">
+                <img src={{ product.image.url }} alt="" >
+
+            </div>
+            <div class="text-box">
+                <div class="description">
+                    <h3>{{product.item}}</h3>
+                    <a href="{{ product.title }}"></a>]view</a>
+                </div>
+                <div class="price-rating">
+                    <h4>${{ product.price}}</h4>
+                    <div class="rate">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
                     </div>
                 </div>
-            {% endfor %}
-    </div>   
-    {% endblock %}
-</body>
-</html>
+            </div>
+        </div>
+    {% endfor %} 

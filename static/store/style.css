@@ -1,90 +1,154 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background: #ece2e2;
+}
+.content {
+    margin-top: 60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 
-}
-body{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    min-height: 100vh;
-    background: #dcdcdc;
-}
-.container{
+.main{
     position: relative;
-    width: 1200px;
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
-    grid-gap:20px;
-    padding:20px
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+    padding:20px;
+    max-width: 1200px;
+   
+   
 }
-.card{
-    width: 100%;
+.detail-card{
     background: #fff;
+    height: 310px;
 }
 
-.imgBox{
+.image-box{
+    flex-basis: 25%;
+    min-width: 200px;
+}
+
+.image-box img{
     position: relative;
     width: 100%;
-    overflow: hidden;
-} 
-img{
-    width: 100%;
-    height: 180px;
+    object-fit: fill;
     transition: .5s ease-in-out;
 }
-img:hover{
-    transform: scale(90%);
-}
-.content{
-    padding: 10px;
-}
-.productName{
-    font-size: 12px;
-    font-weight: 500;
-    margin: 5px 0;
-    color: #000;
-}
-.price_rating{
-    display:flex;
+.text-box{
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+}
+.description{
+    display: flex;
+    justify-content: space-between;
+}
+
+.view-btn{
+    background: #00a2ff;
+    border-radius: 2px;
+    color: #fff;
+    width: 70px;
+    padding:2px 0;
+    outline: none;
+    border: none;
+    text-align: center;
+    text-decoration:none;
+}
+.description h5 {
+    font-size:14px;
+}
+.price-rating{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.price-rating h4{
+    font-size: 18px;
+     color: #f51616;
+}
+.rate{
+    color:#60e27c;
+    font-size: 18px;
+}
+ /*------------------detail page css-----------------------*/
+ 
+.small-contianer{
+    margin-top: 80px;
+    min-width: 680px;
+    display: flex;
+}
+
+.column1{
+    width:380px;
+}
+ .main-img img {
+     padding: 0;
+     height: 310px;
+     width:100%;
+  
+ }
+ .small-img-row
+ {
+     display: flex;
+     justify-content: space-between;
+ }
+ .col-1{
+     flex-basis: 24%;
+     width: 100%;
+
+ }
+ .col-1 img{
+     width: 100%;
+ }
+
+.column2{
+    display: block;
+    margin: 0 20px;
+   
+}
+.column2 select{
+    margin-top: 20px;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border:none;
+    border-radius: 5px;
+    outline: none;
+}
+.column2 h3{
+    margin-top:40px;
+}
+.price{
+    margin-top:20px;
+}
+.column2 a{
+    width:120px;
+    padding: 8px;
+    background: #18a;
+    border:none;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
 
 }
-.price_rating h3{
-    font-size: 18px;
-    color: #f51616;
-}
-.price_rating .fa{
-    color: rgb(19, 22, 2)
-}
-.actions{
-    width: 100%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+.column2 p{
     margin-top:10px;
 }
-.add-to-cart{
-    width: 80px;
-    padding: 5px;
-    border-radius: 2px;
-    background: rgba(125, 85, 235, 0.61);
-    color: #fff;
-}
-.add-to-cart .fa {
-    width:100%;
-    height: auto;
-    font-size:20px;
-    text-align: center;
-    cursor: pointer;
-    transition:2s ease-in-out;
-}
-.add-to-cart:hover{
-    transform: scale(70%);
+.rate{
+    margin-top:20px;
+    color:#e9c215;
+    font-size: 24px;
 }
